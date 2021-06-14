@@ -1,3 +1,3 @@
-const allChords = ["Am", "Bm", "G", "C"];
+const allChords = ["Am", "Bm", "G", "C", "F"];
 
 export default allChords;
