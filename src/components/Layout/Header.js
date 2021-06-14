@@ -5,7 +5,7 @@ const Header = () => {
     <div className={classes.header}>
       <h1>Uke Trainer</h1>
       <div className={classes.summary}>
-        Improve your fretting skills with this customizable trainer
+        Improve your ukelele fretting skills with this customizable trainer
       </div>
     </div>
   );

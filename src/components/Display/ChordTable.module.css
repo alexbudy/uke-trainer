@@ -1,0 +1,10 @@
+.main {
+  border: 1px solid black;
+  width: 30%;
+  text-align: center;
+}
+
+.list {
+  list-style-type: none;
+  text-align: left;
+}

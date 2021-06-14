@@ -4,11 +4,11 @@ import { useState } from "react";
 import STATES from "./states";
 import ChordDisplay from "./ChordDisplay";
 
-const ChordScroller = () => {
+const ChordScroller = (props) => {
   const [currentState, setCurrentState] = useState(STATES.STOPPED);
   const [interval, setInterval] = useState(1);
 
-  const chords = ["Am", "Bm", "F"];
+  const chords = props.chords;
 
   const onStartedHandler = () => {
     setCurrentState(STATES.STARTED);
@@ -19,7 +19,7 @@ const ChordScroller = () => {
   };
 
   const onResetHandler = () => {
-    setCurrentState(STATES.RESET);
+    setCurrentState(STATES.STOPPED);
   };
 
   const onIntervalChangeHandler = (evt) => {
@@ -30,7 +30,11 @@ const ChordScroller = () => {
 
   return (
     <div className={classes.chordScroller}>
-      <ChordDisplay interval={interval} chords={chords} />
+      <ChordDisplay
+        currentState={currentState}
+        interval={interval}
+        chords={chords}
+      />
       <Controls
         currentState={currentState}
         onStarted={onStartedHandler}

@@ -6,6 +6,11 @@
   margin: auto;
 }
 
+.button:hover,
+.button:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+}
+
 .buttonFixedWidth {
   width: 120px;
 }
