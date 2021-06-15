@@ -10,6 +10,10 @@ const ChordScroller = (props) => {
 
   const chords = props.chords;
 
+  const onCountdownHandler = () => {
+    setCurrentState(STATES.COUNTDOWN);
+  };
+
   const onStartedHandler = () => {
     setCurrentState(STATES.STARTED);
   };
@@ -34,10 +38,12 @@ const ChordScroller = (props) => {
         currentState={currentState}
         interval={interval}
         chords={chords}
+        onComplete={onStartedHandler}
       />
       <Controls
         currentState={currentState}
         onStarted={onStartedHandler}
+        onCountdown={onCountdownHandler}
         onPaused={onPausedHandler}
         onReset={onResetHandler}
         onIntervalChange={onIntervalChangeHandler}

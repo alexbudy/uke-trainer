@@ -1,7 +1,8 @@
 const STATES = {
-  STARTED: 0,
-  PAUSED: 1,
-  STOPPED: 2,
+  COUNTDOWN: 0,
+  STARTED: 1,
+  PAUSED: 2,
+  STOPPED: 3,
 };
 
 export default STATES;

@@ -1,6 +1,11 @@
 .main {
-  width: 50%;
   margin: auto;
   margin-top: 25px;
   display: flex;
+}
+
+@media (min-width: 768px) {
+  .main {
+    width: 50%;
+  }
 }

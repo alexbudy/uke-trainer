@@ -1,7 +1,9 @@
-.input input {
-  max-width: 3rem;
-}
-
 .input {
   margin-top: 3px;
+  display: block;
+}
+
+.value {
+  float: right;
+  width: 2rem;
 }

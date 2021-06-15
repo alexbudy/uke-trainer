@@ -6,21 +6,32 @@ import STATES from "./states";
 const Controls = (props) => {
   let currentState = props.currentState;
 
+  let btnText = "Start ▶";
+  let btnFn = props.onCountdown;
+
+  if (currentState === STATES.PAUSED) {
+    btnText = "Resume ▶";
+    btnFn = props.onStarted;
+  } else if (
+    currentState === STATES.STARTED ||
+    currentState === STATES.COUNTDOWN
+  ) {
+    btnText = "Pause ||";
+    btnFn = props.onPaused;
+  }
+
   return (
     <div className={classes.controls}>
-      <Input onChange={props.onIntervalChange} value={props.interval}>
-        Interval(s):{" "}
+      <Input
+        onChange={props.onIntervalChange}
+        value={props.interval}
+        classes={classes.slider}
+      >
+        Interval:{" "}
       </Input>
-      {currentState !== STATES.STARTED && (
-        <Button onClick={props.onStarted} fixedWidth={true}>
-          {props.currentState === STATES.PAUSED ? "Resume ▶" : "Start ▶"}
-        </Button>
-      )}
-      {props.currentState === STATES.STARTED && (
-        <Button onClick={props.onPaused} fixedWidth={true}>
-          Pause ||
-        </Button>
-      )}
+      <Button onClick={btnFn} fixedWidth={true}>
+        {btnText}
+      </Button>
       <Button onClick={props.onReset}>Reset</Button>
     </div>
   );

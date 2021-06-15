@@ -1,7 +1,13 @@
 .main {
-  border: 1px solid black;
-  width: 30%;
   text-align: center;
+  margin-left: 10px;
+  border: 1px solid black;
+}
+
+@media (min-width: 768px) {
+  .main {
+    width: 30%;
+  }
 }
 
 .list {

@@ -1,21 +1,22 @@
 import classes from "./ChordTable.module.css";
 import ChordItem from "./ChordUI/ChordItem";
-import allChords from "./chords";
 
 const ChordTable = (props) => {
   const onSelectChordHandler = (chord) => {
     props.toggleChord(chord);
   };
 
+  let chordsWithToggles = props.chordsWithToggles;
+
   return (
     <div className={classes.main}>
       <h3>Available Chords</h3>
       <ul className={classes.list}>
-        {allChords.map((chord) => (
+        {Object.keys(chordsWithToggles).map((chord) => (
           <ChordItem
             key={chord}
             chord={chord}
-            selected={!!props.selectedChords.find((el) => el === chord)}
+            selected={chordsWithToggles[chord]}
             onSelectChord={onSelectChordHandler}
           />
         ))}
